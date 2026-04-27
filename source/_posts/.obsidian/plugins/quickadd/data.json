@@ -1,18 +1,5 @@
 {
-  "choices": [
-    {
-      "id": "dfd862ed-dc49-43cc-9227-32f9cefae8df",
-      "name": "上传图片",
-      "type": "Macro",
-      "command": false,
-      "runOnStartup": false,
-      "macro": {
-        "name": "上传图片",
-        "id": "4fefcb2b-6c60-4cf3-8e50-235e93f6521d",
-        "commands": []
-      }
-    }
-  ],
+  "choices": [],
   "inputPrompt": "single-line",
   "persistInputPromptDrafts": true,
   "useSelectionAsCaptureValue": true,

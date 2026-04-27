@@ -36,6 +36,5 @@ jobs:
           echo "$SERVER_KEY" | tr -d '\r' > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -H $SERVER_HOST >> ~/.ssh/known_hosts 2>/dev/null
-          ssh -p $SERVER_PORT -o StrictHostKeyChecking=no -i ~/.ssh/id_ed25519 $SERVER_USER@$SERVER_HOST "rm -rf $SERVER_PATH/* && mkdir -p $SERVER_PATH"
-          scp -o StrictHostKeyChecking=no -P $SERVER_PORT -i ~/.ssh/id_ed25519 -r public/* $SERVER_USER@$SERVER_HOST:$SERVER_PATH/
-          ssh -p $SERVER_PORT -o StrictHostKeyChecking=no -i ~/.ssh/id_ed25519 $SERVER_USER@$SERVER_HOST "ls -la $SERVER_PATH"
+          rsync -avz --delete -e "ssh -p 61010 -o StrictHostKeyChecking=no -i ~/.ssh/id_ed25519" public/ $SERVER_USER@$SERVER_HOST:$SERVER_PATH/
+          ssh -p 61010 -o StrictHostKeyChecking=no -i ~/.ssh/id_ed25519 $SERVER_USER@$SERVER_HOST "ls -la $SERVER_PATH"
